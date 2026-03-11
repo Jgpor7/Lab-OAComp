@@ -2,7 +2,11 @@ lw x28, a
 lw x29, b
 sw x28, m
 lw x30, m
-blt x29, x30, fim
+blt x29, x30, m_menor
+
+else_m_menor:
+	sub x30, x28, x29
+	j fim
 
 m_menor:
 	add x30, x29, x28
